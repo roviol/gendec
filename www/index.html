@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+  </head>
+  <body ng-app="starter">
+
+    <ion-pane>
+      <ion-header-bar class="bar-stable">
+        <h1 class="title">Generatriz</h1>
+      </ion-header-bar>
+      <ion-content>
+
+<div class="list" ng-controller="calculaController">
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Número</span>
+    <input type="number" placeholder="Ingrese el número decimal hasta el periodo sin repetirlo" ng-model="decimal" ng-change="calcula(decimal,periodo)">
+  </label>
+
+
+  <div class="item range range-positive">
+    <i>0</i>
+    <input type="range" name="volume" min="0" max="6" ng-model="periodo" ng-change="calcula(decimal,periodo)">
+    <i>6</i>
+  </div>
+
+  <label class="item item-input">
+    <div class="input-label">
+      Número
+    </div>
+    <strong>{{ entero }}</strong><ins>{{ anteperiodo }}</ins><mark>{{ periodorep }}</mark>{{ periodorep }}{{ periodorep }}{{final}}
+  </label>
+
+  <label class="item ">
+    <strong> Resultado </strong>
+  </label>
+  
+  <label class="item item-input">
+    <div class="input-label">
+      Numerador
+    </div>
+    {{ numeradorC }} =  <strong> {{ resultado }} </strong>
+  </label>
+
+  <label class="item item-input">
+    <div class="input-label">
+      Denominador
+    </div>
+   <strong> {{ denominadorC }} </strong>
+  </label>
+
+<!--
+  <label class="item ">
+    <strong> Operación </strong>
+  </label>
+  
+  <label class="item item-input">
+    <div class="input-label">
+      Periodo
+    </div>
+    {{ periodorep }}
+  </label>
+
+  <label class="item item-input">
+    <div class="input-label">
+      Anteperiodo
+    </div>
+    {{ anteperiodo }}
+  </label>
+
+  <label class="item item-input">
+    <div class="input-label">
+      Cifras en el periodo
+    </div>
+    {{ periodo }}
+  </label>
+
+  <label class="item item-input">
+    <div class="input-label">
+      Entero
+    </div>
+    {{ entero }}
+  </label>
+
+  <label class="item item-input">
+    <div class="input-label">
+      Parte Decimal
+    </div>
+    {{ partedecimal }}
+  </label>
+-->
+
+</div>
+
+      </ion-content>
+    </ion-pane>
+  </body>
+</html>
