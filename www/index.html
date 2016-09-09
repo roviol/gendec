@@ -50,14 +50,49 @@
   </label>
 
   <label class="item ">
+    <strong> Operación </strong>
+  </label>
+  
+  <div class="row">
+    <div class="col col-50">Entero</div>
+    <div class="col col-50">{{ entero }} </div>
+  </div>
+
+  <div class="row">
+    <div class="col col-50">Anteperiodo</div>
+    <div class="col col-50">{{ anteperiodo }} </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col col-50">Periodo</div>
+    <div class="col col-50">{{ periodorep }} </div>
+  </div>
+
+
+  <label class="item ">
     <strong> Resultado </strong>
   </label>
   
+  <div class="row">
+    <div class="col col-50">Numerador</div>
+    <div class="col">{{ numeradorC }} </div>
+    <div class="col"><strong><u>{{ resultado }}</u></strong></div>
+  </div>
+
+
+  <div class="row">
+    <div class="col col-50">Denominador</div>
+    <div class="col">&nbsp; </div>
+    <div class="col"><strong>{{ denominadorC }}</strong></div>
+  </div>
+
+  <!--
   <label class="item item-input">
     <div class="input-label">
       Numerador
     </div>
-    {{ numeradorC }} =  <strong> {{ resultado }} </strong>
+    =  <strong> {{ resultado }} </strong>
   </label>
 
   <label class="item item-input">
@@ -66,7 +101,7 @@
     </div>
    <strong> {{ denominadorC }} </strong>
   </label>
-
+-->
 <!--
   <label class="item ">
     <strong> Operación </strong>

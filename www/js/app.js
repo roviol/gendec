@@ -22,6 +22,38 @@ var myApp = angular.module('starter', ['ionic'])
     if(window.StatusBar) {
       StatusBar.styleDefault();
     }
+
+ 
+//======admob code start=============
+ 
+      var admobid = {};
+        // select the right Ad Id according to platform
+        if( /(android)/i.test(navigator.userAgent) ) { 
+            admobid = { // for Android
+                banner: 'ca-app-pub-4959711621245492/9747450762',
+                interstitial: 'ca-app-pub-4959711621245492/9747450762'
+            };
+        } else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) {
+            admobid = { // for iOS
+                banner: 'ca-app-pub-4959711621245492/9747450762',
+                interstitial: 'ca-app-pub-4959711621245492/9747450762'
+            };
+        } else {
+            admobid = { // for Windows Phone
+                banner: 'ca-app-pub-4959711621245492/9747450762',
+                interstitial: 'ca-app-pub-4959711621245492/9747450762'
+            };
+        }
+ 
+  if(window.AdMob) AdMob.createBanner( {
+      adId:admobid.banner, 
+      position:AdMob.AD_POSITION.BOTTOM_CENTER, 
+      autoShow:true} );
+ 
+//=======AdMob Code End=======
+ 
+
+    
   });
 })
 
