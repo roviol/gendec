@@ -30,18 +30,18 @@ var myApp = angular.module('starter', ['ionic'])
         // select the right Ad Id according to platform
         if( /(android)/i.test(navigator.userAgent) ) { 
             admobid = { // for Android
-                banner: 'ca-app-pub-4959711621245492/9747450762',
-                interstitial: 'ca-app-pub-4959711621245492/9747450762'
+                banner: 'ca-app-pub-4959711621245492/7561639967',
+                interstitial: 'ca-app-pub-4959711621245492/7561639967'
             };
         } else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) {
             admobid = { // for iOS
-                banner: 'ca-app-pub-4959711621245492/9747450762',
-                interstitial: 'ca-app-pub-4959711621245492/9747450762'
+                banner: 'ca-app-pub-4959711621245492/7561639967',
+                interstitial: 'ca-app-pub-4959711621245492/7561639967'
             };
         } else {
             admobid = { // for Windows Phone
-                banner: 'ca-app-pub-4959711621245492/9747450762',
-                interstitial: 'ca-app-pub-4959711621245492/9747450762'
+                banner: 'ca-app-pub-4959711621245492/7561639967',
+                interstitial: 'ca-app-pub-4959711621245492/7561639967'
             };
         }
  
@@ -58,7 +58,7 @@ var myApp = angular.module('starter', ['ionic'])
 })
 
 myApp.controller('calculaController', ['$scope', function($scope) {
-  $scope.decimal = 0.3;
+  $scope.decimal = 0.345;
   $scope.periodo = 1;
   $scope.decimalmostrar = '';
   $scope.periodoextract = null;
@@ -73,6 +73,8 @@ myApp.controller('calculaController', ['$scope', function($scope) {
   $scope.denominadorB= null;
   $scope.denominadorC= null;
   $scope.resultado= null;
+  $scope.operdisp= null;
+  $scope.resultdisp= null;
   $scope.final= '';
 
   $scope.calcula = function calcula(decimal, periodo) {

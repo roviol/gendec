@@ -25,21 +25,21 @@
 
     <ion-pane>
       <ion-header-bar class="bar-stable">
-        <h1 class="title">Generatriz</h1>
+        <h1 class="title">Fracción Generatriz</h1>
       </ion-header-bar>
       <ion-content>
 
 <div class="list" ng-controller="calculaController">
-  <label class="item item-input item-stacked-label">
-    <span class="input-label">Número</span>
-    <input type="number" placeholder="Ingrese el número decimal hasta el periodo sin repetirlo" ng-model="decimal" ng-change="calcula(decimal,periodo)">
-  </label>
+<!--  <label class="item item-input item-stacked-label">
+    <span class="input-label">Número</span>-->
+    <input type="number" style='font-size: x-large; width: 100%;text-align: center' step="0.001" placeholder="Ingrese el número decimal hasta el periodo sin repetirlo" ng-model="decimal" ng-change="calcula(decimal,periodo)">
+  <!--</label>-->
 
 
   <div class="item range range-positive">
-    <i>0</i>
+    <!--<i>0</i>-->
     <input type="range" name="volume" min="0" max="6" ng-model="periodo" ng-change="calcula(decimal,periodo)">
-    <i>6</i>
+    <i>{{periodo}}</i>
   </div>
 
   <label class="item item-input">
@@ -49,12 +49,22 @@
     <strong>{{ entero }}</strong><ins>{{ anteperiodo }}</ins><mark>{{ periodorep }}</mark>{{ periodorep }}{{ periodorep }}{{final}}
   </label>
 
-  <label class="item ">
-    <strong> Operación </strong>
-  </label>
-  
+<ul class="list calm">
+
+  <li class="item item-toggle item-toggle-calm">
+     <strong>Análisis</strong>
+     <label class="toggle toggle-calm">
+       <input type="checkbox" ng-model="operdisp">
+       <div class="track">
+         <div class="handle"></div>
+       </div>
+     </label>
+  </li>
+  </ul>
+
+<div ng-show="operdisp">
   <div class="row">
-    <div class="col col-50">Entero</div>
+    <div class="col col-50">Parte entera</div>
     <div class="col col-50">{{ entero }} </div>
   </div>
 
@@ -68,25 +78,35 @@
     <div class="col col-50">Periodo</div>
     <div class="col col-50">{{ periodorep }} </div>
   </div>
+</div>
 
+<ul class="list calm">
 
-  <label class="item ">
-    <strong> Resultado </strong>
-  </label>
-  
+  <li class="item item-toggle item-toggle-calm">
+     <strong>Resultado</strong>
+     <label class="toggle toggle-calm">
+       <input type="checkbox"  ng-model="resultdisp">
+       <div class="track">
+         <div class="handle"></div>
+       </div>
+     </label>
+  </li>
+  </ul>
+
+<div ng-show="resultdisp">
   <div class="row">
     <div class="col col-50">Numerador</div>
     <div class="col">{{ numeradorC }} </div>
-    <div class="col"><strong><u>{{ resultado }}</u></strong></div>
+    <div class="col" style="font-size: x-large"><strong><u>{{ resultado }}</u></strong></div>
   </div>
 
 
   <div class="row">
     <div class="col col-50">Denominador</div>
     <div class="col">&nbsp; </div>
-    <div class="col"><strong>{{ denominadorC }}</strong></div>
+    <div class="col" style="font-size: x-large"><strong>{{ denominadorC }}</strong></div>
   </div>
-
+</div>
   <!--
   <label class="item item-input">
     <div class="input-label">
